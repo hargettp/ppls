@@ -1,0 +1,75 @@
+{
+  "name": "pure-prolog-language-support",
+  "description": "Pure Prolog Language Support",
+  "author": "Phil Hargett",
+  "license": "MIT",
+  "version": "0.0.1",
+  "publisher": "hargettp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hargettp/prolog-language-support"
+  },
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:prolog"
+  ],
+  "main": "dist/extension.js",
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/vscode": "^1.63.0"
+  },
+  "contributes": {
+    "configuration": {
+      "title": "",
+      "properties": {
+        "prolog.executable": {
+          "type": "string",
+          "default": "/opt/homebrew/bin/swipl",
+          "description": "Points to the Prolog executable."
+        },
+        "prolog.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the language server."
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "prolog",
+        "aliases": [
+          "Prolog",
+          "swipl"
+        ],
+        "configuration": "./languages/prolog/prolog.configuration.json",
+        "extensions": [
+          ".pl",
+          ".pro",
+          ".prolog",
+          ".plt"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "prolog",
+        "scopeName": "source.prolog",
+        "path": "./languages/prolog/prolog.tmLanguage.json"
+      }
+    ]
+  }
+}
