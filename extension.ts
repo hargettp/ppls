@@ -18,7 +18,9 @@ export function activate(context: ExtensionContext) {
   let script = context.asAbsolutePath(path.join("prolog","run.pl"));
   let prologArgs = [
       "-s",
-      script
+      script,
+      "-g",
+      "halt"
     ];
 
   // If the extension is launched in debug mode then the debug server options are used
