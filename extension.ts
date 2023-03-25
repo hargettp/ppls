@@ -15,12 +15,17 @@ let client: LanguageClient;
 export function activate(context: ExtensionContext) {
 
   let prologExecutable = workspace.getConfiguration("prolog").executable;
+  let plsOption = workspace.getConfiguration("prolog").pls.loadFrom;
+  let plsLocalDirectory = workspace.getConfiguration("prolog").pls.localDirectory;
   let script = context.asAbsolutePath(path.join("prolog","run.pl"));
   let prologArgs = [
       "-s",
       script,
       "-g",
-      "halt"
+      "halt",
+      "--",
+      plsOption,
+      plsLocalDirectory
     ];
 
   // If the extension is launched in debug mode then the debug server options are used

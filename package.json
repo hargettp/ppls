@@ -32,6 +32,7 @@
       "properties": {
         "prolog.executable": {
           "type": "string",
+          "scope": "machine-overridable",
           "default": "/opt/homebrew/bin/swipl",
           "description": "Points to the Prolog executable."
         },
@@ -45,6 +46,29 @@
           ],
           "default": "off",
           "description": "Traces the communication between VS Code and the language server."
+        },
+        "prolog.pls.loadFrom": {
+          "markdownDescription": "Specifies how the [Prolog Language Server](https://github.com/hargettp/prolog_lsp) should be loaded",
+          "scope": "machine-overridable",
+          "type": "string",
+          "default": "package",
+          "enum": [
+            "package",
+            "directory"
+          ],
+          "enumItemLabels": [
+            "From globally installed package",
+            "From a local directory"
+          ],
+          "markdownEnumDescriptions": [
+            "Useful if the package has been installed globally using `pack_install`",
+            "Useful if you have the [Prolog Language Server](https://github.com/hargettp/prolog_lsp)(`prolog_lsp`) cloned locally"
+          ]
+        },
+        "prolog.pls.localDirectory": {
+          "markdownDescription": "Absolute file path to local directory containing [Prolog Language Server](https://github.com/hargettp/prolog_lsp); only used if `#prolog.plsOption` is set to `From a local directory`",
+          "scope": "machine-overridable",
+          "type": "string"
         }
       }
     },
