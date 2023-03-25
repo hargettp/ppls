@@ -7,7 +7,7 @@
   "publisher": "hargettp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hargettp/prolog-language-support"
+    "url": "https://github.com/hargettp/ppls"
   },
   "engines": {
     "vscode": "^1.63.0"
