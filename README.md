@@ -13,3 +13,5 @@ Currently supports the following features, both for the current project source, 
 * Go To Definition(s)
 * Auto-completion
 
+This extension is still in an alpha state, and is actively used for developing the Prolog Language Server behind it, please expect bugs and imperfections. If the extension stops working, simply reload the VS Code window. Worst case, check for a rogue `swipl` process running in the background, and use your operating system's tools to quit it.
+
