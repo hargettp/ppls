@@ -1,16 +1,17 @@
 {
   "name": "pure-prolog-language-support",
-  "description": "Pure Prolog Language Support",
+  "displayName": "Pure Prolog Language Support",
+  "description": "Support for Prolog, including interacting with a language server written in pure Prolog",
   "author": "Phil Hargett",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "hargettp",
   "repository": {
     "type": "git",
     "url": "https://github.com/hargettp/ppls"
   },
   "engines": {
-    "vscode": "^1.63.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Programming Languages"
