@@ -3,7 +3,7 @@
   "description": "Pure Prolog Language Support",
   "author": "Phil Hargett",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "hargettp",
   "repository": {
     "type": "git",
