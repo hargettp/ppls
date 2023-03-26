@@ -4,7 +4,7 @@
   "description": "Support for Prolog, including interacting with a language server written in pure Prolog",
   "author": "Phil Hargett",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "publisher": "hargettp",
   "repository": {
     "type": "git",
