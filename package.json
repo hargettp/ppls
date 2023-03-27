@@ -4,7 +4,7 @@
   "description": "Support for Prolog, including interacting with a language server written in pure Prolog",
   "author": "Phil Hargett",
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "hargettp",
   "repository": {
     "type": "git",
@@ -21,23 +21,21 @@
   ],
   "main": "./dist/extension",
   "dependencies": {
-    "vscode-languageclient": "^7.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "vscode-languageclient": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/vscode": "^1.63.0",
-    "ts-loader": "^9.4.2",
-    "webpack": "^5.76.3",
-    "webpack-cli": "^5.0.1"
+    "esbuild": "^0.17.14"
   },
   "scripts": {
-    "vscode:prepublish": "npm run package",
-    "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
     "test-compile": "tsc -p ./"
-  },
+    },
   "contributes": {
     "configuration": {
       "title": "",

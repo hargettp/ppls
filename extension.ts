@@ -1,5 +1,3 @@
-"use strict"
-
 import * as path from 'path'; 
 import { workspace, ExtensionContext } from 'vscode';
 
@@ -12,7 +10,7 @@ import {
 
 let client: LanguageClient;
 
-export function activate(context: ExtensionContext) {
+export async function activate(context: ExtensionContext) {
 
   let prologExecutable = workspace.getConfiguration("prolog").executable;
   let plsOption = workspace.getConfiguration("prolog").pls.loadFrom;
